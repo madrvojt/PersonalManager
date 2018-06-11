@@ -10,12 +10,12 @@ Tutorial is for Visual Studio 2017
 
 ## Instructions
 
-* [Step One](Instructions/Step1-intro.md)
+* [Step One](https://github.com/user/repo/blob/branch/Instructions/Step1-intro.md)
 
-* [Step Two](Instructions/Step2-pages+navigations.md)
+* [Step Two](https://github.com/user/repo/blob/branch/Instructions/Step2-pages+navigations.md)
 
-* [Step Three](Instructions/Step3-lists.md)
+* [Step Three](https://github.com/user/repo/blob/branch/Instructions/Step3-lists.md)
 
-* [Step Four](Instructions/Step4-database.md)
+* [Step Four](https://github.com/user/repo/blob/branch/Instructions/Step4-database.md)
 
-* [Step Five](Instructions/Step4-congnitiveservices.md)
+* [Step Five](https://github.com/user/repo/blob/branch/Instructions/Step4-congnitiveservices.md)
