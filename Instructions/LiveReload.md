@@ -10,14 +10,16 @@ First requirements:
 ## How-to install and use
 1) Download and install Visual Studio extension - [Xamarin Live Reload](https://marketplace.visualstudio.com/items?itemName=Xamarin.XamarinLiveReload)
 2) Add Xamarin.LiveReload Nuget to your shared project (.Net standard or Shared)
-![Live Reload Nuget](../../../../source/repos/PersonalManager/Resources/Screenshots/LiveReloadNuget.png)
+
+![Live Reload Nuget](../Resources/Screenshots/LiveReloadNuget.png)
+
 > Nuget package is needed only in your shared application project for example in .NET standard library
 
 3) Run *LiveReload.Init()* in your App
 ```csharp
 public partial class App : Application
 {
-	public A![Live Player Gif](../../../../Desktop/LivePlayerGif.gif)pp ()
+	public App ()
 	{
         #if DEBUG
         LiveReload.Init();
@@ -31,7 +33,7 @@ public partial class App : Application
 ```
 4) Run application and if your device and Visual Studio are connected you should see something like this:
 
-![Live Player Gif](../../../../source/repos/PersonalManager/Resources/Screenshots/LivePlayerGif.gif)
+![Live Player Gif](../Resources/Screenshots/LivePlayerGif.gif)
 
 > After installation you will see some warnings in Errors Window, it's because of LiveReload is in Preview and it needs little bit more time to fix everything.
 

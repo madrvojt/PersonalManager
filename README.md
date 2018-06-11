@@ -13,7 +13,7 @@ Tutorial is for Visual Studio 2017
 
 * [Step One](https://github.com/madrvojt/PersonalManager/blob/master/Instructions/Step1-intro+layouts.md)
 
-* [Optional - Xamarin Live Reload](https://github.com/madrvojt/PersonalManager/blob/master/Instructions/LiveReload.md)
+* [Optional - Xamarin Live Reload](Instructions/LiveReload.md)
 
 * [Step Two](https://github.com/madrvojt/PersonalManager/blob/master/Instructions/Step2-pages+navigations.md)
 
