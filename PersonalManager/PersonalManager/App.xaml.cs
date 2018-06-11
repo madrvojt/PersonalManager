@@ -9,7 +9,12 @@ namespace PersonalManager
 	{
 		public App ()
 		{
-			InitializeComponent();
+            #if DEBUG
+            LiveReload.Init();
+            #endif
+
+            InitializeComponent();
+
 
 			MainPage = new MainPage();
 		}
