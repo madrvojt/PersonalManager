@@ -37,5 +37,50 @@ public class FloatingActionButtonView : Button
 
 [Complete Android custom renderer](https://github.com/madrvojt/PersonalManager/blob/master/PersonalManager/PersonalManager.Android/Renderers/FloatingActionButtonViewRenderer.cs)
 
+### 3. Update Tasks and Contact Page
+
+*  Tasks Page
+```csharp
+ <AbsoluteLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+        <ListView x:Name="TasksListView" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+        </ListView>
+        <views:FloatingActionButtonView x:Name="FloatingButton" Clicked="Button_Clicked" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" ButtonColor="Blue" ImageName="add"/>
+    </AbsoluteLayout>
+```
+
+*  Contact Page
+
+```csharp
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:PersonalManager.Views"
+             x:Class="PersonalManager.Pages.ContactsPage">
+    <AbsoluteLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+        <ListView x:Name="TasksListView" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"/>
+        <views:FloatingActionButtonView x:Name="FloatingButton" Clicked="Button_Clicked" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" ButtonColor="Blue" ImageName="add"/>
+    </AbsoluteLayout>
+```
+
+</ContentPage>
+
+
+
+### 4. Add picture XML to Android Resources/Drawable
+
+https://github.com/madrvojt/PersonalManager/blob/master/PersonalManager/PersonalManager.Android/Resources/drawable/add.xml
+
+### 5. Add button click to codebehind (Contact page , Tasks page)
+
+```csharp
+ private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new AddTaskPage());
+        }
+```
+
+
+
+
 
 
