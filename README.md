@@ -18,4 +18,4 @@ Tutorial is for Visual Studio 2017
 
 * [Database](https://github.com/madrvojt/PersonalManager/blob/master/Instructions/Step4-database.md)
 
-* [Step Five](https://github.com/madrvojt/PersonalManager/blob/master/Instructions/Step5-congnitiveservices.md)
+* [Step Five](https://github.com/madrvojt/PersonalManager/blob/master/Instructions/Step5-cognitiveservices.md)
