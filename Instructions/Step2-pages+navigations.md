@@ -78,7 +78,7 @@ public TasksPage()
 	tasks.Add("Join XMDG.cz on Facebook and Twitter");
 	tasks.Add("Enjoy Xamarin Prague Days");
 
-    QuickTaskListView.ItemsSource = tasks;
+    TasksListView.ItemsSource = tasks;
 }
 
 ```
