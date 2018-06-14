@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonalManager.Pages.AddContact">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="EntryContact" Placeholder="Add Contact"/>
+            <Button x:Name="ButtonPhoto" Text="Load Photo to Contact" Clicked="ButtonPhoto_Clicked"/>
+            <Button x:Name="Save" Text="Save task"/>
+            <Button x:Name="Close" Text="Close" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

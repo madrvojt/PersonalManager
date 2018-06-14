@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:SuaveControls.Views;assembly=SuaveControls.FloatingActionButton"
+             xmlns:enums="clr-namespace:PersonalManager.Enums"
+             xmlns:views="clr-namespace:PersonalManager.Views"
+             x:Class="PersonalManager.Pages.TasksPage">
+
+    <AbsoluteLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+        <ListView x:Name="TasksListView" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Message}" Detail="{Binding ContactName}" TextColor="Black" DetailColor="Brown">
+                        <TextCell.ContextActions>
+                            <MenuItem Clicked="MenuItem_Clicked" Text="Delete" CommandParameter="{Binding .}" />
+                        </TextCell.ContextActions>
+                    </TextCell>  
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+        </ListView>
+        <views:FloatingActionButtonView x:Name="FloatingButton" Clicked="Button_Clicked" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" ButtonColor="Blue" ImageName="add"/>
+    </AbsoluteLayout>
+
+</ContentPage>
