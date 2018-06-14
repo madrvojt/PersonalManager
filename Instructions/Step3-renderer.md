@@ -36,6 +36,7 @@ public class FloatingActionButtonView : Button
 
 * Renderers/FloatingActionButtonViewRenderer
 
+https://github.com/madrvojt/PersonalManager/blob/master/PersonalManager/PersonalManager.Android/Renderers/FloatingActionButtonViewRenderer.cs
 
 
 
