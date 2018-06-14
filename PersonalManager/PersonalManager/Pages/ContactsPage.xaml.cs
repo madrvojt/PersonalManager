@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PersonalManager.Database;
+using PersonalManager.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +18,21 @@ namespace PersonalManager.Pages
 		{
 			InitializeComponent ();
 		}
-	}
+
+
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new AddContact());
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            var connection = DatabaseLoader.Connection;
+            var contacts = connection.Table<Contact>().ToList().Select(x => x.Name).ToList();
+                  TasksListView.ItemsSource = contacts;
+        }
+
+    }
 }

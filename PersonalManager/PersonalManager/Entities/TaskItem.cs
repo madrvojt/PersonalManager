@@ -10,5 +10,11 @@ namespace PersonalManager.Entities
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Message { get; set; }
+
+        public int ContactId { get; set; }
+
+        [Ignore]
+        public string ContactName { get; set; }
+
     }
 }

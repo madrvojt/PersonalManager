@@ -10,7 +10,11 @@
         <ListView x:Name="TasksListView" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Message}" Detail="{Binding User}" TextColor="Black" DetailColor="Black"></TextCell>  
+                    <TextCell Text="{Binding Message}" Detail="{Binding ContactName}" TextColor="Black" DetailColor="Brown">
+                        <TextCell.ContextActions>
+                            <MenuItem Clicked="MenuItem_Clicked" Text="Delete" CommandParameter="{Binding .}" />
+                        </TextCell.ContextActions>
+                    </TextCell>  
                 </DataTemplate>
 
             </ListView.ItemTemplate>

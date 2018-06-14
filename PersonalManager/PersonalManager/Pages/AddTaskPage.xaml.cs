@@ -19,6 +19,9 @@ namespace PersonalManager.Pages
 			InitializeComponent ();
             Close.Clicked += Close_Clicked;
             Save.Clicked += Save_Clicked;
+            var connection = DatabaseLoader.Connection;
+            var contacts = connection.Table<Contact>().ToList().Select(x => x.Name).ToList();
+            PickerContact.ItemsSource = contacts;
 
         }
 
@@ -29,13 +32,16 @@ namespace PersonalManager.Pages
 
         private async void Save_Clicked(object sender, EventArgs e)
         {
-            if (EntryTask.Text != string.Empty && EntryPeople.Text != string.Empty)
+            if (EntryTask.Text != string.Empty)
             {
-
                 var connection = DatabaseLoader.Connection;
+                var contactForDatabase = connection.Table<Contact>().Where(x => x.Name == (string)PickerContact.SelectedItem).FirstOrDefault();
+
                 var s = connection.Insert(new TaskItem()
                 {
-                    Message = EntryTask.Text
+                    Message = EntryTask.Text,
+                    ContactId = contactForDatabase.Id
+
                 });
 
                 await Navigation.PopModalAsync();
