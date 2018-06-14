@@ -7,8 +7,15 @@
              x:Class="PersonalManager.Pages.TasksPage">
 
     <AbsoluteLayout HorizontalOptions="Fill" VerticalOptions="Fill">
-        <ListView x:Name="TasksListView" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"/>
-        <views:FloatingActionButtonView x:Name="FloatingButton" Clicked="Button_Clicked" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" ColorNormal="Blue"/>
+        <ListView x:Name="TasksListView" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Message}" Detail="{Binding User}" TextColor="Black" DetailColor="Black"></TextCell>  
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+        </ListView>
+        <views:FloatingActionButtonView x:Name="FloatingButton" Clicked="Button_Clicked" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" ButtonColor="Blue" ImageName="add"/>
     </AbsoluteLayout>
 
 </ContentPage>

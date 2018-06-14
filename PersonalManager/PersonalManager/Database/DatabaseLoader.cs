@@ -18,6 +18,8 @@ namespace PersonalManager.Database
             var databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MyData.db");
             Connection = new SQLiteConnection(databasePath);
             Connection.CreateTable<TaskItem>();
+            Connection.CreateTable<Contact>();
+
         }
     }
 }

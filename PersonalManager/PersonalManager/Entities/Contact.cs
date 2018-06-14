@@ -5,10 +5,12 @@ using System.Text;
 
 namespace PersonalManager.Entities
 {
-    public class TaskItem
+    public class Contact
     {
+
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string Message { get; set; }
+        public string Name { get; set; }
+
     }
 }

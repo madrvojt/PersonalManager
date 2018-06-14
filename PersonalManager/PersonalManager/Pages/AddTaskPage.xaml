@@ -5,6 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="EntryTask" Placeholder="Fill Task"/>
+            <Entry x:Name="EntryPeople" Placeholder="Add People"/>
             <Button x:Name="LoadPhoto" Text="Assing to People"/>
             <Button x:Name="Save" Text="Save task"/>
             <Button x:Name="Close" Text="Close" />

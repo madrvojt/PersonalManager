@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 using Android.App;
@@ -36,36 +38,29 @@ namespace PersonalManager.Droid.Renderers
         protected override void OnElementChanged(ElementChangedEventArgs<FloatingActionButtonView> e)
         {
             base.OnElementChanged(e);
-
-            if (e.OldElement != null || this.Element == null)
-                return;
-
-            if (e.OldElement != null)
-                e.OldElement.PropertyChanged -= HandlePropertyChanged;
-
-
-            if (this.Element != null)
-            {
-                //UpdateContent ();
-                this.Element.PropertyChanged += HandlePropertyChanged;
-            }
-
-            Android.Support.V4.View.ViewCompat.SetBackgroundTintList(fab, ColorStateList.ValueOf(Element.ColorNormal.ToAndroid()));
-
-            fab.RippleColor = Element.ColorRipple.ToAndroid();
+            Android.Support.V4.View.ViewCompat.SetBackgroundTintList(fab, ColorStateList.ValueOf(Element.ButtonColor.ToAndroid()));
             fab.UseCompatPadding = true;
-
-            //var elementImage = Element.ImageName;
-
-            //var imageFile = elementImage?.File;
-            //if (imageFile != null)
-            //{
-            //    fab.SetImageDrawable(Context.Resources.GetDrawable(imageFile));
-            //}
-
             SetNativeControl(fab);
-            SetFabImage(Element.ImageName);
+            var tabIconId = IdFromTitle(Element.ImageName, ResourceManager.DrawableClass);
+
+            fab.SetImageResource(tabIconId);
             fab.Click += Fab_Click;
+        }
+
+        protected override void OnLayout(bool changed, int l, int t, int r, int b)
+        {
+            base.OnLayout(changed, l, t, r, b);
+            Control.BringToFront();
+        }
+
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+
+            if (e.PropertyName == FloatingActionButtonView.ButtonColorProperty.PropertyName)
+            {
+                fab.SetBackgroundColor(Element.ButtonColor.ToAndroid());
+            }
 
         }
 
@@ -75,34 +70,21 @@ namespace PersonalManager.Droid.Renderers
             ((IButtonController)Element).SendClicked();
         }
 
-
-        protected override void OnLayout(bool changed, int l, int t, int r, int b)
+        internal static int IdFromTitle(string title, Type type)
         {
-
-            base.OnLayout(changed, l, t, r, b);
-            Control.BringToFront();
+            string name = Path.GetFileNameWithoutExtension(title);
+            int id = GetId(type, name);
+            return id; // Resources.System.GetDrawable (Resource.Drawable.dashboard);
         }
 
-
-        public void HandlePropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private static int GetId(Type type, string propertyName)
         {
-
-            if (e.PropertyName == "Content")
-            {
-                Tracker.UpdateLayout();
-            }
-
-            else if (e.PropertyName == FloatingActionButtonView.ColorNormalProperty.PropertyName)
-            {
-                fab.SetBackgroundColor(Element.ColorNormal.ToAndroid());
-            }
-
-            else if (e.PropertyName == FloatingActionButtonView.ColorRippleProperty.PropertyName)
-            {
-                fab.RippleColor = Element.ColorRipple.ToAndroid();
-            }
-
-    }
+            FieldInfo[] props = type.GetFields();
+            FieldInfo prop = props.Select(p => p).FirstOrDefault(p => p.Name == propertyName);
+            if (prop != null)
+                return (int)prop.GetValue(type);
+            return 0;
+        }
 
 
 

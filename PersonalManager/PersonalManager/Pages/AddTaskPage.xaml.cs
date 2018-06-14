@@ -29,7 +29,7 @@ namespace PersonalManager.Pages
 
         private async void Save_Clicked(object sender, EventArgs e)
         {
-            if (EntryTask.Text != string.Empty)
+            if (EntryTask.Text != string.Empty && EntryPeople.Text != string.Empty)
             {
 
                 var connection = DatabaseLoader.Connection;
