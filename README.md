@@ -17,7 +17,7 @@ Tutorial is for Visual Studio 2017
 
 * [Step Two](https://github.com/madrvojt/PersonalManager/blob/master/Instructions/Step2-pages+navigations.md)
 
-* [Renderer](https://github.com/madrvojt/PersonalManager/blob/master/Instructions/Step3-lists.md)
+* [Renderer](https://github.com/madrvojt/PersonalManager/blob/master/Instructions/Step3-renderer.md)
 
 * [Database](https://github.com/madrvojt/PersonalManager/blob/master/Instructions/Step4-database.md)
 
