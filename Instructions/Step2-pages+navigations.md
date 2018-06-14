@@ -1,7 +1,7 @@
 #  Personal manager workshop (Part 2)
 
-## Tabbed Page
-First we will create tabbed page, where we will store all our pages.
+<!-- ## Tabbed Page -->
+<!-- First we will create tabbed page, where we will store all our pages.
 
 All you have to do is:
 
@@ -16,7 +16,7 @@ I this new page you will see something like this:
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PersonalManager.TabbedPage1">
   <!--Pages can be added as references or inline-->
-  <ContentPage Title="Tab 1" />
+  <!-- <ContentPage Title="Tab 1" />
   <ContentPage Title="Tab 2" />
   <ContentPage Title="Tab 3" />
 </TabbedPage>
@@ -44,9 +44,9 @@ Then add their references to your Tabbed Page, so final Tabbed Page will look li
     <local:ContactsPage Title="Contacts"/>
     <local:AboutPage Title="About"/>
 </TabbedPage>
-```
+``` --> 
 
-2) Update About Page 
+1) Update About Page 
 
 ```xml
 <StackLayout Margin="20">
@@ -55,7 +55,7 @@ Then add their references to your Tabbed Page, so final Tabbed Page will look li
         </StackLayout>
 ```
 
-3) Update Task Page
+2) Update Tasks Page
 
 * XML
 
@@ -81,5 +81,12 @@ public TasksPage()
     QuickTaskListView.ItemsSource = tasks;
 }
 
+```
+```xml
+3) Update Tasks Page
+
+    <AbsoluteLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+        <ListView x:Name="TasksListView" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"/>
+    </AbsoluteLayout>
 ```
 
