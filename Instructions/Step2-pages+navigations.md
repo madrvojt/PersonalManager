@@ -5,7 +5,7 @@ First we will create tabbed page, where we will store all our pages.
 
 All you have to do is:
 
-1) Add new Item to Solution - Tabbed Page (Str�nka s kartami in Czech)
+1) Add new Item to Solution - Tabbed Page (Str�nka s kartami in Czech)
 
 ![New Tabbed Page](../Resources/Screenshots/NewTabbedPage.png)
 
@@ -44,5 +44,42 @@ Then add their references to your Tabbed Page, so final Tabbed Page will look li
     <local:ContactsPage Title="Contacts"/>
     <local:AboutPage Title="About"/>
 </TabbedPage>
+```
+
+2) Update About Page 
+
+```xml
+<StackLayout Margin="20">
+            <Label Text="This application is part of workshop for mDevCamp!" HorizontalOptions="Center"/>
+            <Label Text="Created by Vojtěch Mádr!" HorizontalOptions="Center"/>
+        </StackLayout>
+```
+
+3) Update Task Page
+
+* XML
+
+```xml
+ <AbsoluteLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+        <ListView x:Name="TasksListView" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+        </ListView>
+        <views:FloatingActionButtonView x:Name="FloatingButton" Clicked="Button_Clicked" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" ButtonColor="Blue" ImageName="add"/>
+    </AbsoluteLayout>
+```
+
+* Code Behind
+
+```csharp
+public TasksPage()
+{
+	InitializeComponent();
+	List<string> tasks = new List<string>();
+	tasks.Add("Create Xamarin Apps");
+	tasks.Add("Join XMDG.cz on Facebook and Twitter");
+	tasks.Add("Enjoy Xamarin Prague Days");
+
+    QuickTaskListView.ItemsSource = tasks;
+}
+
 ```
 
