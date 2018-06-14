@@ -82,11 +82,26 @@ public TasksPage()
 }
 
 ```
-```xml
-3) Update Tasks Page
 
+3) Update Contact Page
+
+```xml
     <AbsoluteLayout HorizontalOptions="Fill" VerticalOptions="Fill">
-        <ListView x:Name="TasksListView" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"/>
+        <ListView x:Name="ContactListView" AbsoluteLayout.LayoutFlags="All"       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"/>
     </AbsoluteLayout>
 ```
+
+```csharp
+public ContactPage()
+{
+	InitializeComponent();
+	List<string> tasks = new List<string>();
+	tasks.Add("Vojtech Mádr");
+	tasks.Add("Martin Simecek");
+
+    ContactListView.ItemsSource = tasks;
+}
+
+```
+
 
